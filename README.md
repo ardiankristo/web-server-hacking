@@ -42,7 +42,7 @@ Mesin Penyerang -> menggunakan kali linux, berjalan di VM Kali Linux
 -- hydra -l **<file.username>** -P **<password>** ftp://**<ip_target>** atau
 -- hydra -L **<file.txt_userlists>** -P **<file.txt_passwordlist>** ftp://**<ip_target>** atau 
 -- kombinasi dari salah satu dari keduanya
-- ex: hydra -L kristo -P /home/kali/Documents/Hatch/passlist.txt ftp://192.168.52.129
+- ex: `hydra -L kristo -P /home/kali/Documents/Hatch/passlist.txt ssh://192.168.52.129`
 - ftp![hydra_ftp](http://ardiankristo.it.student.pens.ac.id/folder/Screenshot%202020-11-24%20183404.png)
 - ssh![hydra_ssh](http://ardiankristo.it.student.pens.ac.id/folder/Screenshot%202020-11-24%20204226.png)
 
