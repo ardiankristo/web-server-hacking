@@ -4,8 +4,13 @@
 - Nauvalia Regina (2110171054)
 - Ardian Kristya (2110171055)
 
+### Kebutuhan:
+Web Server -> menggunakan nginx yang berjalan di VM Ubuntu
+Mesin Penyerang -> menggunakan kali linux, berjalan di VM Kali Linux
+
 #### 1. Scanning menggunakan nmap
 - Buka kali linux
+- Cek IP yang satu jaringan -> `arp -a`
 - nmap <ip target>
 - ![nmap](http://ardiankristo.it.student.pens.ac.id/folder/Screenshot%202020-11-24%20224235.png)
 
@@ -42,4 +47,24 @@
 - ssh![hydra_ssh](http://ardiankristo.it.student.pens.ac.id/folder/Screenshot%202020-11-24%20204226.png)
 
 # Coming soon
-#### 6. Server Security Testing menggunakan metasploit
+#### 6. Server Security Testing menggunakan metasploit (belum ada yang sampai berhasil)
+
+### Pencegahan
+##### 1. Firewall
+- `ufw enable`
+- Restart server
+- ufw dapat di configure juga untuk allow port port tertentu, biasanya pada web server port 80 di allow
+>https://help.ubuntu.com/community/UFW
+##### 2. Pakai password yang lebih aman
+- enter as root
+- `sudo passwd <username> <new_password>`
+>cek kekuatan password: https://www.security.org/how-secure-is-my-password/
+##### 3. Ganti Port untuk proses remote (ex: ftp, ssh)
+- cek: `netstat -tulnp | grep ssh`
+- `grep -i port /etc/ssh/sshd_config`
+- `nano /etc/ssh/sshd_config` lalu cari Port 22
+- ganti Port 22 dengan custom number
+- `systemctl restart sshd`
+##### 4. SSL (Untuk yang sudah memiliki DNS valid)
+- SSL digunakan untuk enkripsi data yang dikirim melalui web server
+- https://haydenjames.io/how-to-set-up-an-nginx-certbot/
